@@ -1,0 +1,62 @@
+<ion-content padding>
+  <ion-card>
+    <ion-item>
+        <ion-icon name="person" slot="start"></ion-icon>
+        <ion-label>Datos</ion-label>
+        <ion-button fill="outline" slot="end">Actualizar</ion-button>
+    </ion-item>
+    
+    <ion-card-content>
+      Actuliza tu información personal para que no tengamos ningún 
+      inconveniente a la hora de brindarte el servicio.
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-item>
+        <ion-icon name="people" slot="start"></ion-icon>
+        <ion-label>Doctor de familia</ion-label>
+    </ion-item>
+    
+    <ion-card-content>
+      La información de tu doctor de familia es: 
+      <br>
+      Nombre: Andres
+      <br>
+      Email: andres@gmail.com
+      <br>
+      Telefono: 320 1598726
+    </ion-card-content>
+  </ion-card>
+
+  <ion-list>
+    <ion-list-header>
+      <ion-label>Citas o pagos pendientes
+      <br>
+      <p>Aquí podra ver tus citas o pagos pendientes a realizar.</p>
+      </ion-label>
+    </ion-list-header>
+
+    <div class="citas">
+      <ion-list-header>
+        <ion-label>Citas</ion-label>
+      </ion-list-header>
+
+      <ion-item detail button>
+        <ion-label>Servicio</ion-label>
+        <p>Fecha</p>
+      </ion-item>
+    </div>
+    
+    <div class="pagos">
+      <ion-list-header>
+        <ion-label>Pagos</ion-label>
+      </ion-list-header>
+
+      <ion-item detail>
+        <ion-label>Pagos</ion-label>
+        <p>Valor</p>
+      </ion-item>
+    </div>
+  </ion-list>
+</ion-content>

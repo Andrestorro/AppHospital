@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TabsPage } from './tabs.page';
+import { LoguinGuard } from '../guards/loguin.guard';
 
 const routes: Routes = [
   {
@@ -8,42 +9,45 @@ const routes: Routes = [
     component: TabsPage,
     children: [
       {
-        path: 'tab1',
+        path: 'user',
         children: [
           {
             path: '',
-            loadChildren: '../tab1/tab1.module#Tab1PageModule'
+            loadChildren: '../pages/users/users.module#UsersPageModule',
+            canActivate: [LoguinGuard]
           }
         ]
       },
       {
-        path: 'tab2',
+        path: 'consultation',
         children: [
           {
             path: '',
-            loadChildren: '../tab2/tab2.module#Tab2PageModule'
+            loadChildren: '../pages/consultation/consultation.module#ConsultationPageModule',
+            canActivate: [LoguinGuard]
           }
         ]
       },
       {
-        path: 'tab3',
+        path: 'results',
         children: [
           {
             path: '',
-            loadChildren: '../tab3/tab3.module#Tab3PageModule'
+            loadChildren: '../pages/results/results.module#ResultsPageModule',
+            canActivate: [LoguinGuard]
           }
         ]
       },
       {
         path: '',
-        redirectTo: '/tabs/tab1',
+        redirectTo: '/tabs/user',
         pathMatch: 'full'
       }
     ]
   },
   {
     path: '',
-    redirectTo: '/tabs/tab1',
+    redirectTo: '/tabs/user',
     pathMatch: 'full'
   }
 ];

@@ -1,0 +1,56 @@
+<ion-header no-border>
+  <ion-toolbar>
+    <ion-title text-center>Registro de usuario</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-item>
+    <ion-label>Tipo de documento</ion-label>
+    <ion-select [(ngModel)]="usuario.typeDocument">
+      <ion-select-option value="Tarjeta de identidad">Tarjeta de identidad</ion-select-option>
+      <ion-select-option value="Cédula">Cédula</ion-select-option>
+      <ion-select-option value="Cédula extranjeria">Cédula extranjeria</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <ion-item>
+    <ion-label>Número de documento</ion-label>
+    <ion-input type="text" [(ngModel)]="usuario.document"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Nombre</ion-label>
+    <ion-input type="text" [(ngModel)]="usuario.firstName"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Apellido</ion-label>
+    <ion-input type="text" [(ngModel)]="usuario.lastName"></ion-input>
+  </ion-item>
+  <!-- <ion-item>
+    <ion-label>Tipo de documento</ion-label>
+    <ion-select>
+      <ion-select-option value="Tarjeta de identidad">Tarjeta de identidad</ion-select-option>
+    </ion-select>
+  </ion-item> -->
+  <ion-item>
+    <ion-label>Correo electronico</ion-label>
+    <ion-input type="email" [(ngModel)]="usuario.email"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Contraseña</ion-label>
+    <ion-input type="password" [(ngModel)]="usuario.password"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Confirmar contraseña</ion-label>
+    <ion-input type="password" [(ngModel)]="usuario.passwordRepeat"></ion-input>
+  </ion-item>
+  <div class="mensagePassword" *ngIf="usuario.password">
+    <p class="passwordCoincide" *ngIf="usuario.password === usuario.passwordRepeat">
+      La contraseña coincide
+    </p>
+    <p class="passwordNoCoincide" *ngIf="usuario.password !== usuario.passwordRepeat">
+      La contraseña no coincide
+    </p>
+  </div>
+  <ion-button expand="block" (click)="registerU()">Registrarse</ion-button>
+  <p text-center>Si ya tienes una cuenta <a routerLink="/loguin">inicia sesión</a>. </p>
+</ion-content>

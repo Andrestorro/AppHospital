@@ -1,0 +1,33 @@
+<ion-content padding>
+  <ion-card>
+    <ion-item>
+        <ion-icon name="list-box" slot="start"></ion-icon>
+        <ion-label>Citas</ion-label>
+    </ion-item>
+    
+    <ion-card-content>
+      Seleccione el tipo de servicio que desea e ingrese la información solicitada.
+    </ion-card-content>
+  </ion-card>
+
+  <ion-item>
+    <ion-label>Servicio</ion-label>
+    <ion-select placeholder="Seleccione un servicio">
+      <ion-select-option value="OPTOMETRÍA">OPTOMETRÍA</ion-select-option>
+      <ion-select-option value="VACUNACIÓN">VACUNACIÓN</ion-select-option>
+      <ion-select-option value="ODONTOLOGÍA">ODONTOLOGÍA</ion-select-option>
+      <ion-select-option value="CONSULTA GENERAL">CONSULTA GENERAL</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-list>
+    <ion-list-header>
+      <ion-label>Citas disponibles</ion-label>
+    </ion-list-header>
+
+    <ion-item detail>
+      <ion-label>Servicios</ion-label>
+      <p>fecha</p>
+    </ion-item>
+  </ion-list>
+</ion-content>
